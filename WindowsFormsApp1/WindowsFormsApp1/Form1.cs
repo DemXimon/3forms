@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        string savedir = "";
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +36,10 @@ namespace WindowsFormsApp1
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (savedir != "")
+            {
+                pictureBox1.Image.Save(savedir);
+            }
         }
 
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,6 +48,7 @@ namespace WindowsFormsApp1
             {
                 pictureBox1.Image.Save(saveFileDialog1.FileName);
                 Text = saveFileDialog1.FileName;
+                savedir = saveFileDialog1.FileName;
             }
         }
 
@@ -53,6 +59,19 @@ namespace WindowsFormsApp1
         private void цветToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             brushСolorDialog.ShowDialog();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            penСolorDialog.ShowDialog();
+            Color a = penСolorDialog.Color;
+            button4.BackColor = a;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            brushСolorDialog.ShowDialog();
+            Color a = brushСolorDialog.Color;
+            button5.BackColor = a;
         }
 
         static int pic;
@@ -94,6 +113,7 @@ namespace WindowsFormsApp1
         static Pen pen = null;
         static Pen erasePen = null;
         static Brush brush2 = null;
+        int wdth = 5;
 
         //нажата кнопка мышки - запоминаем координаты
         private void pictureBox1_MouseDown(object  sender, MouseEventArgs  e)
@@ -103,12 +123,43 @@ namespace WindowsFormsApp1
             g = Graphics.FromImage(pictureBox1.Image);
             //создаём обычный карандаш
             pen = new Pen(penСolorDialog.Color);
+            pen.Width = wdth;
             //создаём очищающий карандаш
             Brush  brush1 = new TextureBrush(pictureBox1.Image);
             erasePen = new Pen(brush1);
+            erasePen.Width = wdth;
             brush2 = new SolidBrush(brushСolorDialog.Color); 
             //режим рисования - замена старого изображения
             g.CompositingMode =CompositingMode.SourceCopy;
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you shure?",
+                      "ansver", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
+                case DialogResult.No:
+                    return;
+            }
+        }
+
+        private void pxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            wdth = 5;
+        }
+
+        private void pxToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wdth = 10;
+        }
+
+        private void pxToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            wdth = 15;
         }
 
         //перемещение мышки - перерисовываем фигуру
@@ -128,7 +179,7 @@ namespace WindowsFormsApp1
             }
             else if (pic == 2)
             {
-                erasePen.Width = 5;
+                erasePen.Width = wdth;
                 g.DrawLine(erasePen, startX, startY, prevX, prevY);
                 //и рисуем заново
                 g.DrawLine(pen, startX, startY, e.X, e.Y);

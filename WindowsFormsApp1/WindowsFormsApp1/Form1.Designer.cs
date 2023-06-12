@@ -40,6 +40,9 @@ namespace WindowsFormsApp1
             this.карандашToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.цветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.толщинаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pxToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pxToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.кистьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.цветToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.penСolorDialog = new System.Windows.Forms.ColorDialog();
@@ -47,12 +50,15 @@ namespace WindowsFormsApp1
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.brushСolorDialog = new System.Windows.Forms.ColorDialog();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,36 +91,37 @@ namespace WindowsFormsApp1
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // карандашToolStripMenuItem
             // 
@@ -128,15 +135,43 @@ namespace WindowsFormsApp1
             // цветToolStripMenuItem
             // 
             this.цветToolStripMenuItem.Name = "цветToolStripMenuItem";
-            this.цветToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.цветToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.цветToolStripMenuItem.Text = "Цвет";
             this.цветToolStripMenuItem.Click += new System.EventHandler(this.цветToolStripMenuItem_Click);
             // 
             // толщинаToolStripMenuItem
             // 
+            this.толщинаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pxToolStripMenuItem,
+            this.pxToolStripMenuItem1,
+            this.pxToolStripMenuItem2});
             this.толщинаToolStripMenuItem.Name = "толщинаToolStripMenuItem";
-            this.толщинаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.толщинаToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.толщинаToolStripMenuItem.Text = "Толщина";
+            // 
+            // pxToolStripMenuItem
+            // 
+            this.pxToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pxToolStripMenuItem.Image")));
+            this.pxToolStripMenuItem.Name = "pxToolStripMenuItem";
+            this.pxToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.pxToolStripMenuItem.Text = "5px";
+            this.pxToolStripMenuItem.Click += new System.EventHandler(this.pxToolStripMenuItem_Click);
+            // 
+            // pxToolStripMenuItem1
+            // 
+            this.pxToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pxToolStripMenuItem1.Image")));
+            this.pxToolStripMenuItem1.Name = "pxToolStripMenuItem1";
+            this.pxToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
+            this.pxToolStripMenuItem1.Text = "10px";
+            this.pxToolStripMenuItem1.Click += new System.EventHandler(this.pxToolStripMenuItem1_Click);
+            // 
+            // pxToolStripMenuItem2
+            // 
+            this.pxToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("pxToolStripMenuItem2.Image")));
+            this.pxToolStripMenuItem2.Name = "pxToolStripMenuItem2";
+            this.pxToolStripMenuItem2.Size = new System.Drawing.Size(99, 22);
+            this.pxToolStripMenuItem2.Text = "15px";
+            this.pxToolStripMenuItem2.Click += new System.EventHandler(this.pxToolStripMenuItem2_Click);
             // 
             // кистьToolStripMenuItem
             // 
@@ -149,7 +184,7 @@ namespace WindowsFormsApp1
             // цветToolStripMenuItem1
             // 
             this.цветToolStripMenuItem1.Name = "цветToolStripMenuItem1";
-            this.цветToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.цветToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.цветToolStripMenuItem1.Text = "Цвет";
             this.цветToolStripMenuItem1.Click += new System.EventHandler(this.цветToolStripMenuItem1_Click);
             // 
@@ -175,6 +210,8 @@ namespace WindowsFormsApp1
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -185,25 +222,35 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(800, 61);
             this.panel1.TabIndex = 2;
             // 
-            // button1
+            // button5
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(3, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 58);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button5.Location = new System.Drawing.Point(469, 17);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Brash";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button2
+            // button4
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(90, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 60);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.Location = new System.Drawing.Point(367, 17);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Pen";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(253, 4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(94, 17);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Закрашивать";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -215,15 +262,25 @@ namespace WindowsFormsApp1
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // checkBox1
+            // button2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(253, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Закрашивать";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(90, -1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 60);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(3, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 58);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -272,6 +329,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStripMenuItem pxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pxToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pxToolStripMenuItem2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
